@@ -1,0 +1,29 @@
+{
+  "name": "gulp-replace-build-block",
+  "version": "0.0.1",
+  "description": "Replaces useref style build blocks in html with a refrences to the specified output script.",
+  "dependencies": {
+    "gulp-replace": "~0.5.0"
+  },
+  "devDependencies": {
+    "fs": "0.0.2",
+    "chai": "~1.10.0",
+    "event-stream": "~3.1.7",
+    "vinyl": "~0.4.6"
+  },
+  "keywords": [
+    "html",
+    "asset",
+    "useref",
+    "concat",
+    "replace",
+    "gulpplugin"
+  ],
+  "bugs": "http://github.com/nlundquist/gulp-replace-build-block/issues",
+  "license": "MIT",
+  "author": "Nils Lundquist (nlundqu@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nlundquist/gulp-replace-build-block.git"
+  }
+}
