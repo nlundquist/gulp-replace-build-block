@@ -3,9 +3,9 @@ var replace = require('gulp-replace');
 var reg_build = /<!--\s*build:(\w+)(?:\(([^\)]+)\))?\s*([^\s]+)?\s*(?:(.*))?\s*-->(?:[\s\S]*?)<!--\s*endbuild\s*-->/g;
 
 var buildblock = function() {
-    return replace(reg_build, function(matches) {
-        var type = matches[1];
-        var path = matches[3];
+    var rewrite = function(matches, type, search, path, options) {
+        if (Array.isArray(matches))
+            return rewrite.apply(this, matches);
 
         if (type == 'css') {
             return '<link href="'+path+'" rel="stylesheet" />';
@@ -14,9 +14,10 @@ var buildblock = function() {
             return '<script src="'+path+'" type="text/javascript"></script>';
         }
         else {
-            throw new TypeError('guilp-replace-build-block: Unknown block type: "'+type+'". Only accepts useref blocks with types "js" or "css".')
+            throw new TypeError('guilp-replace-build-block: Unknown block type: "'+type+'" in block "'+path+'". Only accepts useref blocks with types "js" or "css".')
         }
-    })
-}
+    };
+    return replace(reg_build, rewrite)
+};
 
 module.exports = buildblock;

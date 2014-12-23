@@ -1,6 +1,6 @@
 {
   "name": "gulp-replace-build-block",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Replaces useref style build blocks in html with a refrences to the specified output script.",
   "dependencies": {
     "gulp-replace": "~0.5.0"
