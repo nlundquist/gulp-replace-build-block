@@ -4,6 +4,7 @@ var reg_build = /<!--\s*build:(\w+)(?:\(([^\)]+)\))?\s*([^\s]+)?\s*(?:(.*))?\s*-
 
 var buildblock = function() {
     var rewrite = function(matches, type, search, path, options) {
+        // hack to work around https://github.com/lazd/gulp-replace/issues/30
         if (Array.isArray(matches))
             return rewrite.apply(this, matches);
 
