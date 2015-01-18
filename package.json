@@ -8,6 +8,7 @@
   "devDependencies": {
     "fs": "0.0.2",
     "chai": "~1.10.0",
+    "mocha": "~2.0.1",
     "event-stream": "~3.1.7",
     "vinyl": "~0.4.6"
   },
@@ -25,5 +26,8 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/nlundquist/gulp-replace-build-block.git"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
   }
 }
